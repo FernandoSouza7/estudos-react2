@@ -1,8 +1,4 @@
-// function App() {
-//   return (
-//     <div className="App"><h1>Hello, world</h1></div>
-//   );
-// }
+import './index.css';
 import { Component } from 'react';
 
 class App extends Component {
@@ -21,19 +17,19 @@ class App extends Component {
       this.setState({ name: 'Fernando' });
   }
 
-  handleAClick() {
+  handlerAClick(event) {
+    event.preventDefault();
     const { counter } = this.state;
     this.setState({counter: counter + 1});
   }
 
   render() {
-    const { name } = this.state;
-    const { counter } = this.state;
+    const { name, counter } = this.state;
 
     return(
       <div className='mainContainer'>
           <p onClick={this.handlerPClick}>
-            {name}
+            {name} {counter}
           </p>
           <a 
              onClick={this.handlerAClick}
